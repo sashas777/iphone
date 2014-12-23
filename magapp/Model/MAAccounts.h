@@ -12,7 +12,7 @@
 
 + (instancetype)accountWithName:(NSString*)name storeURL:(NSString*)storeURL sessionID:(NSString*)sessionID;
 - (void)saveSession;
-- (void)deleteSaved;
+- (void)deleteSavedSession;
 - (void)loadSavedSession;
 
 @property (nonatomic, strong) NSString *storeURL;

@@ -17,7 +17,8 @@ NSString * const kAFOAuth1CredentialServiceName = @"AFOAuthCredentialService";
     [SSKeychain setPassword:self.sessionID forService:self.storeURL account:self.accountName];
 }
 
-- (void)deleteSaved {
+#warning TODO call endSession API method on deleting saved
+- (void)deleteSavedSession {
     [SSKeychain deletePasswordForService:self.storeURL account:self.accountName];
 }
 
@@ -97,6 +98,11 @@ static MAAccounts *sharedInstance;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:encodedObject forKey:NSStringFromClass([self class])];
     [defaults synchronize];
+}
+
+- (void)setCurrentAccountIndex:(NSInteger)currentAccountIndex {
+   [self.currentAccount deleteSavedSession];
+    _currentAccountIndex = currentAccountIndex;
 }
 
 - (MAAccount *)currentAccount {
