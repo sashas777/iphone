@@ -21,6 +21,12 @@
 @property (nonatomic, weak) IBOutlet UITextField *usernameField;
 @property (nonatomic, weak) IBOutlet UITextField *APIKeyField;
 
+@property (nonatomic, weak) IBOutlet UILabel *accountLabel;
+@property (nonatomic, weak) IBOutlet UILabel *storeURLLabel;
+@property (nonatomic, weak) IBOutlet UILabel *usernameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *APIKeyLabel;
+@property (nonatomic, weak) IBOutlet UILabel *infoLabel;
+
 @property (nonatomic, strong) UISwipeGestureRecognizer *cancelSwipe;
 @property (nonatomic, strong) NSArray *responders;
 
@@ -47,6 +53,16 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", nil) style:UIBarButtonItemStylePlain target:self action:@selector(cancel:)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Send", nil) style:UIBarButtonItemStylePlain target:self action:@selector(save:)];
     self.navigationItem.rightBarButtonItem.enabled = NO;
+    
+// -- setup localization
+    self.infoLabel.text = NSLocalizedString(@"Please, fill out magento account information below", nil);
+    self.accountLabel.text = [NSLocalizedString(@"Account Name", nil) lowercaseString];
+    self.accountField.placeholder = NSLocalizedString(@"Account Name", nil);
+    self.storeURLLabel.text = [NSLocalizedString(@"Store URL", nil) lowercaseString];
+    self.usernameLabel.text = [NSLocalizedString(@"Username", nil) lowercaseString];
+    self.usernameField.placeholder = NSLocalizedString(@"Username", nil);
+    self.APIKeyLabel.text = [NSLocalizedString(@"API Key", nil) lowercaseString];
+    self.APIKeyField.placeholder = NSLocalizedString(@"API Key", nil);
 }
 
 - (void)didReceiveMemoryWarning {

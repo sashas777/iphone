@@ -1,7 +1,9 @@
 // A
 
 "Account" = "Account";
+"Account Name" = "Account Name";
 "Account was successfully added" = "Account was successfully added";
+"API Key" = "API Key";
 // B
 // C
 
@@ -27,6 +29,8 @@
 
 "Ok" = "Ok";
 // P
+
+"Please, fill out magento account information below" = "Please, fill out magento account information below";
 // Q
 // R
 // S
@@ -34,10 +38,12 @@
 "Sales" = "Sales";
 "Send" = "Send";
 "Settings" = "Settings";
+"Store URL" = "Store URL";
 // T
 // U
 
 "Unexpected server error" = "Unexpected server error";
+"Username" = "Username";
 // V
 // W
 // X

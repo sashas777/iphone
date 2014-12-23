@@ -1,7 +1,9 @@
 // A
 
 "Account" = "Аккаунт";
+"Account Name" = "Имя аккаунта";
 "Account was successfully added" = "Аккаунт успешно добавлен";
+"API Key" = "Ключ API";
 // B
 // C
 
@@ -27,6 +29,8 @@
 
 "Ok" = "ОК";
 // P
+
+"Please, fill out magento account information below" = "Пожалуйста, заполните информацию о вашем аккаунте magento";
 // Q
 // R
 // S
@@ -34,10 +38,12 @@
 "Sales" = "Продажи";
 "Send" = "Отправить";
 "Settings" = "Настройки";
+"Store URL" = "URL магазина";
 // T
 // U
 
 "Unexpected server error" = "Непредсказуемая ошибка сервера";
+"Username" = "Имя пользователя";
 // V
 // W
 // X

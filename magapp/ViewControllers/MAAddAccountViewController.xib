@@ -8,10 +8,15 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MAAddAccountViewController">
             <connections>
                 <outlet property="APIKeyField" destination="6Ss-fr-8PY" id="SAg-MU-o0c"/>
+                <outlet property="APIKeyLabel" destination="E9e-U5-j7p" id="16y-h8-b7G"/>
                 <outlet property="accountField" destination="oO3-QZ-VAr" id="7aT-48-VJd"/>
+                <outlet property="accountLabel" destination="n0g-3A-222" id="sNo-oN-rI9"/>
                 <outlet property="contentScroll" destination="B22-0x-aUY" id="Lyj-vP-pKr"/>
+                <outlet property="infoLabel" destination="1YZ-0v-6XL" id="IYh-qq-G40"/>
                 <outlet property="storeURLField" destination="ISR-f2-Fdz" id="cTc-Hs-QKk"/>
+                <outlet property="storeURLLabel" destination="Lzs-8l-HAg" id="kpB-67-PT3"/>
                 <outlet property="usernameField" destination="6Oh-9l-Dhf" id="o40-AZ-Ovu"/>
+                <outlet property="usernameLabel" destination="cvI-xF-oIr" id="gJp-pP-lnJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
