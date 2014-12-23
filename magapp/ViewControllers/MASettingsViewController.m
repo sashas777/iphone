@@ -71,6 +71,9 @@ static NSString *reuseIdentifier = @"reuseIdentifier";
     [[MAAccounts sharedStorage] deleteAccountWithIndex:indexPath.row];
     [[MAAccounts sharedStorage] saveAccounts];
     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    if (![MAAccounts sharedStorage].hasAccounts) {
+        [self addNewAccount:nil];
+    }
 }
 
 #pragma mark - UITableViewDelegate
