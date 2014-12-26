@@ -26,11 +26,13 @@ NSString * const kAFOAuth1CredentialServiceName = @"AFOAuthCredentialService";
     self.sessionID = [SSKeychain passwordForService:self.storeURL account:self.accountName];
 }
 
-+ (instancetype)accountWithName:(NSString*)name storeURL:(NSString*)storeURL sessionID:(NSString*)sessionID {
++ (instancetype)accountWithName:(NSString*)name storeURL:(NSString*)storeURL sessionID:(NSString*)sessionID username:(NSString *)username {
     MAAccount *account = [[MAAccount alloc] init];
     account.accountName = name;
     account.storeURL = storeURL;
     account.sessionID = sessionID;
+    account.username = username;
+    account.enableNotifications = YES;
     return account;
 }
 
@@ -39,6 +41,8 @@ NSString * const kAFOAuth1CredentialServiceName = @"AFOAuthCredentialService";
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:self.storeURL forKey:NSStringFromSelector(@selector(storeURL))];
     [aCoder encodeObject:self.accountName forKey:NSStringFromSelector(@selector(accountName))];
+    [aCoder encodeObject:self.username forKey:NSStringFromSelector(@selector(username))];
+    [aCoder encodeBool:self.enableNotifications forKey:NSStringFromSelector(@selector(enableNotifications))];
     [self saveSession];
 }
 
@@ -46,6 +50,8 @@ NSString * const kAFOAuth1CredentialServiceName = @"AFOAuthCredentialService";
     if (self = [self init]) {
         self.storeURL = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(storeURL))];
         self.accountName = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(accountName))];
+        self.username = [aDecoder decodeObjectForKey:NSStringFromSelector(@selector(username))];
+        self.enableNotifications = [aDecoder decodeBoolForKey:NSStringFromSelector(@selector(enableNotifications))];
         [self loadSavedSession];
     }
     return self;
@@ -113,8 +119,8 @@ static MAAccounts *sharedInstance;
     return account;
 }
 
-- (void)addAccountWithName:(NSString*)name storeURL:(NSString*)storeURL sessionID:(NSString*)sessionID {
-    [self.mutableAccounts addObject:[MAAccount accountWithName:name storeURL:storeURL sessionID:sessionID]];
+- (void)addAccountWithName:(NSString*)name storeURL:(NSString*)storeURL sessionID:(NSString*)sessionID username:(NSString *)username {
+    [self.mutableAccounts addObject:[MAAccount accountWithName:name storeURL:storeURL sessionID:sessionID username:username]];
 }
 
 - (void)deleteAccountWithIndex:(NSInteger)index {

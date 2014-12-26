@@ -9,6 +9,7 @@
 #import "MAAppDelegate.h"
 #import "MASplitViewController.h"
 #import "MARootViewController.h"
+#import "MAAccounts.h"
 
 @interface MAAppDelegate ()
 
@@ -39,6 +40,7 @@
 
 - (void)setNavigationBarAppearance {
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
     [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
 }
@@ -62,6 +64,7 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+    [[MAAccounts sharedStorage] saveAccounts];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 

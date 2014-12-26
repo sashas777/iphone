@@ -30,8 +30,10 @@
     [super viewDidLoad];
     self.soapRequest = [[MASoapRequest alloc] initStandard];
     self.navigationController.navigationBar.translucent = NO;
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigation-button-menu.png"] style:UIBarButtonItemStylePlain target:appDelegate().splitViewController action:@selector(openOrCloseMenu:)];
-    self.navigationItem.leftBarButtonItem = item;
+    if ([self.navigationController.viewControllers[0] isEqual:self]) {
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigation-button-menu.png"] style:UIBarButtonItemStylePlain target:appDelegate().splitViewController action:@selector(openOrCloseMenu:)];
+        self.navigationItem.leftBarButtonItem = item;
+    } 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardOpened:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHided:) name:UIKeyboardWillHideNotification object:nil];
 }

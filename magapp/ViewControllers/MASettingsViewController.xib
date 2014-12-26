@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MASettingsViewController">
             <connections>
-                <outlet property="tableView" destination="KSR-WO-ozI" id="aFH-2N-OuH"/>
+                <outlet property="currentAccountField" destination="nXR-jY-wag" id="e1d-zF-5Or"/>
+                <outlet property="currentAccountLabel" destination="gCy-dZ-htG" id="OCG-08-4wu"/>
+                <outlet property="enableNotificationsLabel" destination="VL3-S7-eRD" id="Qsx-go-eKo"/>
+                <outlet property="notificationsSwitch" destination="7Nh-yZ-y5F" id="JtI-ZX-ggD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,17 +19,57 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KSR-WO-ozI">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable notifications" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="219" translatesAutoresizingMaskIntoConstraints="NO" id="VL3-S7-eRD">
+                    <rect key="frame" x="8" y="20" width="219" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Nh-yZ-y5F">
+                    <rect key="frame" x="257" y="15" width="51" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="haD-kg-1mO"/>
+                        <constraint firstAttribute="width" constant="49" id="l3H-Fo-yeY"/>
+                    </constraints>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="RoX-Mp-4Ok"/>
-                        <outlet property="delegate" destination="-1" id="NTm-pv-jeJ"/>
+                        <action selector="onSwitch:" destination="-1" eventType="valueChanged" id="XLd-ri-geo"/>
                     </connections>
-                </tableView>
+                </switch>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current account" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="304" translatesAutoresizingMaskIntoConstraints="NO" id="gCy-dZ-htG">
+                    <rect key="frame" x="8" y="68" width="304" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nXR-jY-wag">
+                    <rect key="frame" x="8" y="93" width="304" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="tJg-DD-CXp"/>
+                    </connections>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="310" y="411"/>
+            <constraints>
+                <constraint firstItem="nXR-jY-wag" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Bc7-Ul-cXp"/>
+                <constraint firstItem="VL3-S7-eRD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="EXi-Gn-09t"/>
+                <constraint firstItem="nXR-jY-wag" firstAttribute="top" secondItem="gCy-dZ-htG" secondAttribute="bottom" constant="4" id="HtB-mN-FAg"/>
+                <constraint firstItem="7Nh-yZ-y5F" firstAttribute="leading" secondItem="VL3-S7-eRD" secondAttribute="trailing" constant="30" id="LKb-RW-myd"/>
+                <constraint firstItem="VL3-S7-eRD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Q1X-cp-jfc"/>
+                <constraint firstAttribute="trailing" secondItem="gCy-dZ-htG" secondAttribute="trailing" constant="8" id="SZF-CN-Rw3"/>
+                <constraint firstItem="gCy-dZ-htG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="bzD-l6-547"/>
+                <constraint firstAttribute="trailing" secondItem="nXR-jY-wag" secondAttribute="trailing" constant="8" id="hOS-2R-uwi"/>
+                <constraint firstAttribute="trailing" secondItem="7Nh-yZ-y5F" secondAttribute="trailing" constant="14" id="jQa-AN-lId"/>
+                <constraint firstItem="gCy-dZ-htG" firstAttribute="top" secondItem="7Nh-yZ-y5F" secondAttribute="bottom" constant="22" id="mSb-4Y-V9q"/>
+                <constraint firstItem="7Nh-yZ-y5F" firstAttribute="centerY" secondItem="VL3-S7-eRD" secondAttribute="centerY" id="sqv-uq-baI"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="263" y="200"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

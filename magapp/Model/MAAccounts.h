@@ -10,7 +10,7 @@
 
 @interface MAAccount : NSObject <NSCoding>
 
-+ (instancetype)accountWithName:(NSString*)name storeURL:(NSString*)storeURL sessionID:(NSString*)sessionID;
++ (instancetype)accountWithName:(NSString*)name storeURL:(NSString*)storeURL sessionID:(NSString*)sessionID username:(NSString*)username;
 - (void)saveSession;
 - (void)deleteSavedSession;
 - (void)loadSavedSession;
@@ -18,6 +18,8 @@
 @property (nonatomic, strong) NSString *storeURL;
 @property (nonatomic, strong) NSString *accountName;
 @property (nonatomic, strong) NSString *sessionID;
+@property (nonatomic, strong) NSString *username;
+@property (nonatomic, assign) BOOL enableNotifications;
 
 @end
 
@@ -32,7 +34,7 @@
 @property (nonatomic, assign) NSInteger currentAccountIndex;
 @property (nonatomic, readonly) MAAccount *currentAccount;
 
-- (void)addAccountWithName:(NSString*)name storeURL:(NSString*)storeURL sessionID:(NSString*)sessionID;
+- (void)addAccountWithName:(NSString*)name storeURL:(NSString*)storeURL sessionID:(NSString*)sessionID username:(NSString*)username;
 - (void)deleteAccountWithIndex:(NSInteger)index;
 
 @end

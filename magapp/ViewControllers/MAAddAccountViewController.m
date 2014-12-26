@@ -81,9 +81,9 @@
 
 - (UITextField*)findNextResponder:(UITextField*)currentResponder {
     UITextField *next = nil;
-    int maxI = currentResponder.tag - FIRST_FIELD_TAG + self.responders.count;
-    for (int i = currentResponder.tag - FIRST_FIELD_TAG; i < maxI; i++) {
-        int index = i >= self.responders.count ? i - self.responders.count : i;
+    NSInteger maxI = currentResponder.tag - FIRST_FIELD_TAG + self.responders.count;
+    for (NSInteger i = currentResponder.tag - FIRST_FIELD_TAG; i < maxI; i++) {
+        NSInteger index = i >= self.responders.count ? i - self.responders.count : i;
         UITextField *field = self.responders[index];
         if ((field != currentResponder && field.text.length == 0) ||
             (field != currentResponder && field == self.storeURLField && !checkURL(self.storeURLField.text))) {
@@ -111,7 +111,7 @@
     [self.progressHUD show:YES];
     [self.soapRequest loginWithUsername:self.usernameField.text pass:self.APIKeyField.text URLString:self.storeURLField.text completionHandler:^(AFHTTPRequestOperation *request, NSString *sessionID) {
         __weak MAAddAccountViewController *weakSelf = self;
-        [[MAAccounts sharedStorage] addAccountWithName:self.accountField.text storeURL:self.storeURLField.text sessionID:sessionID];
+        [[MAAccounts sharedStorage] addAccountWithName:self.accountField.text storeURL:self.storeURLField.text sessionID:sessionID username:self.usernameField.text];
         [MAAccounts sharedStorage].currentAccountIndex = [MAAccounts sharedStorage].accounts.count - 1;
         [[MAAccounts sharedStorage] saveAccounts];
         [MAUtils showInfoAlertWithText:NSLocalizedString(@"Account was successfully added", nil) handler:^(id sender) {

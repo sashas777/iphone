@@ -2,88 +2,53 @@
 //  MASettingsViewController.m
 //  magapp
 //
-//  Created by Viktor Kalinchuk on 10/22/14.
+//  Created by Viktor Kalinchuk on 12/26/14.
 //  Copyright (c) 2014 Viktor Kalinchuk. All rights reserved.
 //
 
 #import "MASettingsViewController.h"
 #import "MAAccounts.h"
-#import "MAAddAccountViewController.h"
+#import "MAAccountsViewController.h"
 
-@interface MASettingsViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface MASettingsViewController () <UITextFieldDelegate>
 
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UILabel *enableNotificationsLabel;
+@property (nonatomic, weak) IBOutlet UILabel *currentAccountLabel;
+@property (nonatomic, weak) IBOutlet UISwitch *notificationsSwitch;
+@property (nonatomic, weak) IBOutlet UITextField *currentAccountField;
+
+- (IBAction)onSwitch:(id)sender;
 
 @end
 
 @implementation MASettingsViewController
 
-static NSString *reuseIdentifier = @"reuseIdentifier";
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Settings", nil);
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewAccount:)];
+    self.enableNotificationsLabel.text = NSLocalizedString(@"Enable notifications", nil);
+    self.currentAccountLabel.text = NSLocalizedString(@"Current account", nil);
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.tableView reloadData];
-    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:[MAAccounts sharedStorage].currentAccountIndex inSection:0] animated:NO scrollPosition:UITableViewScrollPositionMiddle];
+    self.currentAccountField.text = [MAAccounts sharedStorage].currentAccount.accountName;
+    self.notificationsSwitch.on = [MAAccounts sharedStorage].currentAccount.enableNotifications;
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [[MAAccounts sharedStorage] saveAccounts];
+#pragma mark - Actions
+
+- (void)onSwitch:(UISwitch*)sender {
+    [MAAccounts sharedStorage].currentAccount.enableNotifications = sender.on;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - UITextFieldDelegate
 
-- (void)addNewAccount:(id)sender {
-    MAAddAccountViewController *ac = [[MAAddAccountViewController alloc] initWithNibName:nil bundle:nil];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:ac];
-    [self presentViewController:nav animated:YES completion:nil];
-}
-
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [MAAccounts sharedStorage].accounts.count;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
-    }
-    MAAccount *account = [MAAccounts sharedStorage].accounts[indexPath.row];
-    cell.textLabel.text = account.accountName;
-    cell.detailTextLabel.text = account.storeURL;
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    [[MAAccounts sharedStorage] deleteAccountWithIndex:indexPath.row];
-    [[MAAccounts sharedStorage] saveAccounts];
-    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    if (![MAAccounts sharedStorage].hasAccounts) {
-        [self addNewAccount:nil];
-    }
-}
-
-#pragma mark - UITableViewDelegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [MAAccounts sharedStorage].currentAccountIndex = indexPath.row;
-}
-
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewCellEditingStyleDelete;
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    MAAccountsViewController *ac = [[MAAccountsViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:ac animated:YES];
+    return NO;
 }
 
 @end

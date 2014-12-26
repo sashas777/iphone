@@ -86,17 +86,19 @@
     float optimizedWidth = MAX(calculated, MIN_MENU_WIDTH);
     self.controlsViewController.view.frame = CGRectMake(0.f, 0.f, optimizedWidth, self.view.bounds.size.height);
     self.controlsViewController.view.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleHeight;
-    [self.controlsViewController setItemSelected:0 notifyDelegate:NO];
     [appDelegate().theRootestViewController.view insertSubview:self.controlsViewController.view atIndex:0];
     [self.view addSubview:self.contentView];
     [appDelegate().theRootestViewController addChildViewController:self.controlsViewController];
     [self addChildControllerWithNumber:0];
+}
 
-// ------- User must add at least one account
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    // ------- User must add at least one account
     if (![MAAccounts sharedStorage].hasAccounts) {
         MAAddAccountViewController *ac = [[MAAddAccountViewController alloc] initWithNibName:nil bundle:nil];
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:ac];
-        [self presentViewController:nav animated:NO completion:nil];
+        [self.navigationController presentViewController:nav animated:NO completion:nil];
     }
 }
 
@@ -129,6 +131,7 @@
 
 - (void)controlsMenu:(MAControlsViewController*)sender didSelectedItemAtIndex:(NSUInteger)index {
     [self addChildControllerWithNumber:index];
+    [self.currentViewController popToRootViewControllerAnimated:NO];
     [self openOrCloseMenu:nil];
 }
 

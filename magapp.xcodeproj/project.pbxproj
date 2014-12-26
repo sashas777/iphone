@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8423131719F7783B00923131 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8423131619F7783B00923131 /* Default-568h@2x.png */; };
 		8423136419F7835C00923131 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8423134319F7835C00923131 /* Images.xcassets */; };
-		8423136519F7835C00923131 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8423134419F7835C00923131 /* Info.plist */; };
 		8423136619F7835C00923131 /* MAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8423134619F7835C00923131 /* MAAppDelegate.m */; };
 		8423136719F7835C00923131 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8423134719F7835C00923131 /* main.m */; };
 		8423136819F7835C00923131 /* MAMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8423134A19F7835C00923131 /* MAMenuItem.m */; };
@@ -30,8 +29,8 @@
 		8423138419F78B5E00923131 /* MAHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8423138219F78B5E00923131 /* MAHomeViewController.xib */; };
 		8423138819F78B8100923131 /* MASalesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8423138619F78B8100923131 /* MASalesViewController.m */; };
 		8423138919F78B8100923131 /* MASalesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8423138719F78B8100923131 /* MASalesViewController.xib */; };
-		8423138D19F78B9D00923131 /* MASettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8423138B19F78B9D00923131 /* MASettingsViewController.m */; };
-		8423138E19F78B9D00923131 /* MASettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8423138C19F78B9D00923131 /* MASettingsViewController.xib */; };
+		8423138D19F78B9D00923131 /* MAAccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8423138B19F78B9D00923131 /* MAAccountsViewController.m */; };
+		8423138E19F78B9D00923131 /* MAAccountsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8423138C19F78B9D00923131 /* MAAccountsViewController.xib */; };
 		84302FF019FA1B24007B7616 /* MAAddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84302FEE19FA1B24007B7616 /* MAAddAccountViewController.m */; };
 		84302FF119FA1B24007B7616 /* MAAddAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84302FEF19FA1B24007B7616 /* MAAddAccountViewController.xib */; };
 		84302FF419FA25BB007B7616 /* MAAccounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 84302FF319FA25BB007B7616 /* MAAccounts.m */; };
@@ -68,6 +67,8 @@
 		844B4F421A497FE900860756 /* SSKeychain.strings in Resources */ = {isa = PBXBuildFile; fileRef = 844B4F3C1A497FE900860756 /* SSKeychain.strings */; };
 		844B4F431A497FE900860756 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B4F3F1A497FE900860756 /* SSKeychain.m */; };
 		844B4F441A497FE900860756 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 844B4F411A497FE900860756 /* SSKeychainQuery.m */; };
+		A68914BB1A4D538400B2934C /* MASettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A68914B91A4D538400B2934C /* MASettingsViewController.m */; };
+		A68914BC1A4D538400B2934C /* MASettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68914BA1A4D538400B2934C /* MASettingsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,9 +111,9 @@
 		8423138519F78B8100923131 /* MASalesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASalesViewController.h; sourceTree = "<group>"; };
 		8423138619F78B8100923131 /* MASalesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASalesViewController.m; sourceTree = "<group>"; };
 		8423138719F78B8100923131 /* MASalesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASalesViewController.xib; sourceTree = "<group>"; };
-		8423138A19F78B9D00923131 /* MASettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASettingsViewController.h; sourceTree = "<group>"; };
-		8423138B19F78B9D00923131 /* MASettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASettingsViewController.m; sourceTree = "<group>"; };
-		8423138C19F78B9D00923131 /* MASettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASettingsViewController.xib; sourceTree = "<group>"; };
+		8423138A19F78B9D00923131 /* MAAccountsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAAccountsViewController.h; sourceTree = "<group>"; };
+		8423138B19F78B9D00923131 /* MAAccountsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAAccountsViewController.m; sourceTree = "<group>"; };
+		8423138C19F78B9D00923131 /* MAAccountsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MAAccountsViewController.xib; sourceTree = "<group>"; };
 		84302FED19FA1B24007B7616 /* MAAddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAAddAccountViewController.h; sourceTree = "<group>"; };
 		84302FEE19FA1B24007B7616 /* MAAddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAAddAccountViewController.m; sourceTree = "<group>"; };
 		84302FEF19FA1B24007B7616 /* MAAddAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MAAddAccountViewController.xib; sourceTree = "<group>"; };
@@ -182,6 +183,9 @@
 		844B4F3F1A497FE900860756 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		844B4F401A497FE900860756 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
 		844B4F411A497FE900860756 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
+		A68914B81A4D538400B2934C /* MASettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASettingsViewController.h; sourceTree = "<group>"; };
+		A68914B91A4D538400B2934C /* MASettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASettingsViewController.m; sourceTree = "<group>"; };
+		A68914BA1A4D538400B2934C /* MASettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASettingsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,9 +285,12 @@
 				8423138519F78B8100923131 /* MASalesViewController.h */,
 				8423138619F78B8100923131 /* MASalesViewController.m */,
 				8423138719F78B8100923131 /* MASalesViewController.xib */,
-				8423138A19F78B9D00923131 /* MASettingsViewController.h */,
-				8423138B19F78B9D00923131 /* MASettingsViewController.m */,
-				8423138C19F78B9D00923131 /* MASettingsViewController.xib */,
+				A68914B81A4D538400B2934C /* MASettingsViewController.h */,
+				A68914B91A4D538400B2934C /* MASettingsViewController.m */,
+				A68914BA1A4D538400B2934C /* MASettingsViewController.xib */,
+				8423138A19F78B9D00923131 /* MAAccountsViewController.h */,
+				8423138B19F78B9D00923131 /* MAAccountsViewController.m */,
+				8423138C19F78B9D00923131 /* MAAccountsViewController.xib */,
 				84302FED19FA1B24007B7616 /* MAAddAccountViewController.h */,
 				84302FEE19FA1B24007B7616 /* MAAddAccountViewController.m */,
 				84302FEF19FA1B24007B7616 /* MAAddAccountViewController.xib */,
@@ -487,7 +494,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MA;
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Viktor Kalinchuk";
 				TargetAttributes = {
 					842312EC19F775A100923131 = {
@@ -522,13 +529,13 @@
 				8423137119F7835C00923131 /* MAControlsViewController.xib in Resources */,
 				8423138419F78B5E00923131 /* MAHomeViewController.xib in Resources */,
 				84302FF119FA1B24007B7616 /* MAAddAccountViewController.xib in Resources */,
+				A68914BC1A4D538400B2934C /* MASettingsViewController.xib in Resources */,
 				8423131719F7783B00923131 /* Default-568h@2x.png in Resources */,
-				8423138E19F78B9D00923131 /* MASettingsViewController.xib in Resources */,
+				8423138E19F78B9D00923131 /* MAAccountsViewController.xib in Resources */,
 				844B4F2A1A49608D00860756 /* Localizable.strings in Resources */,
 				8423136419F7835C00923131 /* Images.xcassets in Resources */,
 				8423138919F78B8100923131 /* MASalesViewController.xib in Resources */,
 				8423136B19F7835C00923131 /* MAMenuCell.xib in Resources */,
-				8423136519F7835C00923131 /* Info.plist in Resources */,
 				844B4F421A497FE900860756 /* SSKeychain.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,7 +558,7 @@
 				8423136719F7835C00923131 /* main.m in Sources */,
 				8423136F19F7835C00923131 /* MABaseViewController.m in Sources */,
 				844B4EE11A493AA000860756 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
-				8423138D19F78B9D00923131 /* MASettingsViewController.m in Sources */,
+				8423138D19F78B9D00923131 /* MAAccountsViewController.m in Sources */,
 				844B4F1F1A49526D00860756 /* TBXML+HTTP.m in Sources */,
 				844B4EE71A493AA000860756 /* UIWebView+AFNetworking.m in Sources */,
 				844B4F361A49664300860756 /* MBProgressHUD.m in Sources */,
@@ -567,6 +574,7 @@
 				8423138819F78B8100923131 /* MASalesViewController.m in Sources */,
 				8423136619F7835C00923131 /* MAAppDelegate.m in Sources */,
 				844B4EDC1A493AA000860756 /* AFURLConnectionOperation.m in Sources */,
+				A68914BB1A4D538400B2934C /* MASettingsViewController.m in Sources */,
 				844B4F1E1A49526D00860756 /* TBXML+Compression.m in Sources */,
 				844B4EDE1A493AA000860756 /* AFURLResponseSerialization.m in Sources */,
 				844B4F261A4953A400860756 /* MASoapRequest.m in Sources */,
@@ -645,7 +653,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -680,7 +688,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

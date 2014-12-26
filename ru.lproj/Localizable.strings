@@ -1,6 +1,7 @@
 // A
 
 "Account" = "Аккаунт";
+"Accounts" = "Аккаунты";
 "Account Name" = "Имя аккаунта";
 "Account was successfully added" = "Аккаунт успешно добавлен";
 "API Key" = "Ключ API";
@@ -8,9 +9,11 @@
 // C
 
 "Cancel" = "Отмена";
+"Current account" = "Текущий аккаунт";
 // D
 // E
 
+"Enable notifications" = "Разрешить уведомления";
 "Error" = "Ошибка";
 // F
 // G

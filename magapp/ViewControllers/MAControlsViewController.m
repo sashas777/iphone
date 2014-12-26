@@ -29,6 +29,14 @@
 	// Do any additional setup after loading the view.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self setItemSelected:0 notifyDelegate:NO];
+    });
+}
+
 - (NSArray *)tableData {
     return [self.delegate itemsForMenu];
 }
@@ -38,7 +46,8 @@
 }
 
 - (void)setItemSelected:(NSInteger)index notifyDelegate:(BOOL)shouldNotifyDelegate {
-    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
+    self.selectedPath = [NSIndexPath indexPathForRow:index inSection:0];
+    [self.tableView selectRowAtIndexPath:self.selectedPath animated:YES scrollPosition:UITableViewScrollPositionNone];
     if (shouldNotifyDelegate) {
         [self.delegate controlsMenu:self didSelectedItemAtIndex:index];
     }
@@ -64,6 +73,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.selectedPath = indexPath;
     [self.delegate controlsMenu:self didSelectedItemAtIndex:indexPath.row];
 }
 

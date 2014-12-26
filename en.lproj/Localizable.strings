@@ -1,6 +1,7 @@
 // A
 
 "Account" = "Account";
+"Accounts" = "Accounts";
 "Account Name" = "Account Name";
 "Account was successfully added" = "Account was successfully added";
 "API Key" = "API Key";
@@ -8,9 +9,11 @@
 // C
 
 "Cancel" = "Cancel";
+"Current account" = "Current account";
 // D
 // E
 
+"Enable notifications" = "Enable notifications";
 "Error" = "Error";
 // F
 // G
